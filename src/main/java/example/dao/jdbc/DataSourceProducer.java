@@ -11,6 +11,6 @@ import javax.sql.DataSource;
  */
 public class DataSourceProducer {
     @Produces @PetClinicDS
-    @Resource(mappedName = "petclinic")
+    @Resource(name = "java:jboss/datasources/ExampleDS") // default test data source
     DataSource ds;
 }

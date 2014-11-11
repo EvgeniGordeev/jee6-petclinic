@@ -3,13 +3,14 @@ package example.entities;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
 
 /**
  * Simple JavaBean domain object representing an person.
  *
  * @author Ken Krebs
  */
-@Entity
+@MappedSuperclass
 public class Person extends BaseEntity {
 
     @NotEmpty

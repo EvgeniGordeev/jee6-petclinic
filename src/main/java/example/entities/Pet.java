@@ -3,7 +3,9 @@ package example.entities;
 import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import java.util.*;
@@ -26,7 +28,7 @@ public class Pet extends NamedEntity {
    @ManyToOne
 	private Owner owner;
 
-   @OneToMany
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "pet", fetch = FetchType.EAGER)
 	private Set<Visit> visits;
 
 

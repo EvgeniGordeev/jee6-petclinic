@@ -5,6 +5,7 @@ import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 import org.springframework.core.style.ToStringCreator;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
@@ -23,7 +24,7 @@ public class Owner extends Person {
     @NotEmpty @Pattern(regexp = "^[0-9]+$", message = "Only digits are allowed")
 	private String telephone;
 
-   @OneToMany(fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "owner",fetch = FetchType.EAGER)
 	private Set<Pet> pets;
 
 

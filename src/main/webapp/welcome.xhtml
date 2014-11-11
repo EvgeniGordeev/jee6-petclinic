@@ -1,19 +1,18 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:ui="http://java.sun.com/jsf/facelets" template="template.xhtml">
 
 
     <ui:define name="content">
 
         <h2>Welcome</h2>
-
         <ul>
-          <li><a href="/owners">Find owner</a></li>
-          <li><a href="/vets">Display all veterinarians</a></li>
-          <li><a href="/reports">Clinic reports</a></li>
+
+            <li><h:link value="Find owner" outcome="/findowner"/></li>
+            <li><h:link value="Display all veterinarians" outcome="/vets"/></li>
+            <li><h:link value="Clinic reports" outcome="/reports"/></li>
+
         </ul>
-
-
     </ui:define>
 
 </ui:composition>

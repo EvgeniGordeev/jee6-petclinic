@@ -4,6 +4,8 @@ import org.springframework.beans.support.MutableSortDefinition;
 import org.springframework.beans.support.PropertyComparator;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -21,7 +23,7 @@ import java.util.*;
 @Entity
 public class Vet extends Person {
 
-   @OneToMany
+   @ManyToMany(fetch = FetchType.EAGER)
 	private Set<Specialty> specialties;
 
 

@@ -3,6 +3,7 @@ package example.interceptors;
 import example.jmx.JMXBean;
 import example.jmx.UsageLogMBean;
 
+import javax.enterprise.context.Dependent;
 import javax.inject.Singleton;
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
@@ -15,8 +16,9 @@ import java.util.List;
  */
 @Interceptor
 @CountUsage
-@Singleton
+//@Singleton
 @JMXBean(objectName = "UsageLog")
+@Dependent
 public class UsageLogInterceptor implements UsageLogMBean {
     private int historySize = 100;
 
